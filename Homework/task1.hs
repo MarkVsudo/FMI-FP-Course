@@ -12,6 +12,9 @@ import Data.List
 encode :: Eq a => [a] -> [(Int, a)]
 
 encode [] = []
+-- Solution 1
 encode xs =  (length (head(group xs)), head(head(group xs))) : encode (drop (length (head(group xs))) xs)
 
+-- Solution 2
+encode' xs = [(length pair, head pair) | pair <- group xs]
  
