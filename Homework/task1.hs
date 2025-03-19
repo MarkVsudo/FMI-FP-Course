@@ -16,5 +16,5 @@ encode [] = []
 encode xs =  (length (head(group xs)), head(head(group xs))) : encode (drop (length (head(group xs))) xs)
 
 -- Solution 2
-encode' xs = [(length pair, head pair) | pair <- group xs]
+encode' xs = [(length g, head g) | g <- group xs]
  
