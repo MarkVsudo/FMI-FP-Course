@@ -7,7 +7,7 @@
 -- mergeEvenOdd [1,2] [6,7,8] → [1,6,2,7]
 
 mergeEvenOdd :: [Int] -> [Int] -> [Int]
-mergeEvenOdd [_] [] = []
-mergeEvenOdd [] [_] = []
-mergeEvenOdd [] [] = []
+mergeEvenOdd [] _ = []
+mergeEvenOdd _ [] = []
 mergeEvenOdd (a:as) (b:bs) = [a, b] ++ mergeEvenOdd as bs
+
