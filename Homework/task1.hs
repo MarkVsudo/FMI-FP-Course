@@ -9,12 +9,24 @@
 
 import Data.List
 
-encode :: Eq a => [a] -> [(Int, a)]
-
-encode [] = []
 -- Solution 1
+encode :: Eq a => [a] -> [(Int, a)]
+encode [] = []
 encode xs =  (length (head(group xs)), head(head(group xs))) : encode (drop (length (head(group xs))) xs)
 
 -- Solution 2
+encode' :: Eq a => [a] -> [(Int, a)]
+encode' [] = []
 encode' xs = [(length g, head g) | g <- group xs]
  
+-- Solution 3
+encode'' :: Eq a => [a] -> [(Int, a)]
+encode'' [] = []
+encode'' (x:xs) = helper 1 x xs
+  where
+    helper count elem [] = [(count, elem)]
+    helper count elem (y:ys)
+      | elem == y  = helper (count + 1) elem ys  -- Increment count if same element
+      | otherwise  = (count, elem) : helper 1 y ys  -- Start a new group
+
+
