@@ -4,5 +4,5 @@
 reverseNum :: Int -> [Int]
 
 reverseNum n 
-  | n < 10 = [n]
+  | n < 10    = [n]
   | otherwise = (n `mod` 10) : reverseNum (n `div` 10)  
