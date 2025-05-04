@@ -15,7 +15,6 @@ import Data.Ord
 
 main :: IO ()
 main = do 
-  -- 26.1
   print Monday
   let monday = read "Monday" :: DayOfWeek
   print monday
@@ -29,16 +28,7 @@ main = do
   print (createInterval Monday Friday)
   print (convertToNumber Monday)
   print (convertFromNumber 0)
-  -- 26.2
-  let members = [Student "Ivan" "123" ["Math", "Programming"], 
-                 Student "Maria" "124" ["Math", "Biology"], 
-                 Teacher "Dr. Stefan" ["Math", "Programming"] 101, 
-                 Teacher "Prof. Elena" ["Biology"] 102]
-  print $ countStudents members  -- 2
-  print $ attendees "Math" members  -- [Student "Ivan" "123" ["Math", "Programming"], Student "Maria" "124" ["Math", "Biology"]]
-  print $ classmembers "Math" members  -- [Student "Ivan" "123" ["Math", "Programming"], Student "Maria" "124" ["Math", "Biology"], Teacher "Dr. Stefan" ["Math", "Programming"] 101]
-  print $ namestitles members  -- ["Ivan", "Maria", "Prof. Dr. Stefan", "Prof. Prof. Elena"]
-  print $ bussiest members  -- 101
+
   
 
 data DayOfWeek = Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday 
