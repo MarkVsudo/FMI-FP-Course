@@ -9,10 +9,10 @@ s1 :: Scale
 s1 = (0, 0)
 
 validate :: Scale -> Maybe Scale
-validate s@(l, r) =
+validate (l, r) =
   if abs (l - r) > 50 || l > 100 || r > 100
     then Nothing
-    else Just s
+    else Just (l, r)
 
 left :: Double -> Scale -> Maybe Scale
 left x (l, r) = validate $ (l + x, r)

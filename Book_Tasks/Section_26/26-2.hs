@@ -17,11 +17,15 @@
 -- д) (*) Да се дефинира функция bussiest :: [Member] -> Int, която
 -- намира кабинета с най-много преподаватели.
 
+import Data.List
+import Data.Ord (comparing)
+
 main :: IO ()
 main = do 
   let members = [Student "Ivan" "123" ["Math", "Programming"], 
                  Student "Maria" "124" ["Math", "Biology"], 
                  Teacher "Dr. Stefan" ["Math", "Programming"] 101, 
+                 Teacher "Dr. Peter" ["Biology", "Programming"] 101, 
                  Teacher "Prof. Elena" ["Biology"] 102]
   print $ countStudents members  -- 2
   print $ attendees "Math" members  -- [Student "Ivan" "123" ["Math", "Programming"], Student "Maria" "124" ["Math", "Biology"]]
